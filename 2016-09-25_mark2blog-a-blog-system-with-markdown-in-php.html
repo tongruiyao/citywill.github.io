@@ -39,7 +39,6 @@ font-size:24px;
 
     <article class="markdown-body">
         <p>mark2blog是用于将markdown文档生成博客的php程序。目前支持简单的模板，分页索引等功能。</p>
-<p>github: <a href="https://github.com/citywill/mark2blog">https://github.com/citywill/mark2blog</a></p>
 <h2>依赖</h2>
 <ul>
 <li><a href="https://github.com/erusev/parsedown">https://github.com/erusev/parsedown</a></li>
@@ -47,8 +46,13 @@ font-size:24px;
 </ul>
 <h2>安装</h2>
 <ul>
-<li>使用composer安装依赖</li>
+<li>下载代码后使用composer安装依赖</li>
+<li>不使用composer也可以下载包含完整代码的zip压缩包</li>
 <li>markdown文档中使用#标记作为博客标题</li>
+</ul>
+<h2>DEMO</h2>
+<ul>
+<li><a href="http://citywill.github.io">citywill.github.io</a></li>
 </ul>
 <h2>例子</h2>
 <pre><code class="language-php">&lt;?php
@@ -73,7 +77,36 @@ $generated = $mark2blog-&gt;generated;
 echo
 '本次执行生成了' . $generated['article'] . '篇文章&lt;br&gt;',
 '以及' . $generated['index'] . '个索引页&lt;br&gt;',
-'生成目录为' . $mark2blog-&gt;htmlPath;</code></pre>    </article >
+'生成目录为' . $mark2blog-&gt;htmlPath;</code></pre>
+<h2>markdown</h2>
+<ul>
+<li>文档命名格式参考：<code>2015-08-31_note-agilely-with-workflowy.md</code></li>
+<li>头信息必须在文件的开始部分，并且需要按照YAML的格式（目前不支持多层）写在两行三个（或以上）虚线之间。头信息可以在模板中通过$assign数组获取</li>
+<li>文档首行#标注的标题，将作为title头信息处理</li>
+</ul>
+<pre><code class="language-markdown">---
+title: 用 Workflowy 高效记笔记
+---
+
+常在知乎看到有人这么推销笔记技巧：
+
+![糟糕的笔记](src/2015-08-31_note-agilely-with-workflowy_godness.jpg)</code></pre>
+<p>或者</p>
+<pre><code class="language-markdown">#用 Workflowy 高效记笔记
+
+常在知乎看到有人这么推销笔记技巧：
+
+![糟糕的笔记](src/2015-08-31_note-agilely-with-workflowy_godness.jpg)</code></pre>
+<h2>todo list</h2>
+<ul>
+<li>生成rss</li>
+<li>美化模板</li>
+<li>about等单页的处理</li>
+<li>临近文章导航</li>
+<li>分类和标签</li>
+<li><del>增加评论模块</del></li>
+<li><del>解析头信息</del></li>
+</ul>    </article >
 </div>
 
 
